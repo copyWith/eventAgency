@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="a">a
+	<div class="b">b
+		<div class="c">c
+			<div id="d">d</div>
+		</div>
+	</div>
+</div>
+<script src="eventAgency.min.js"></script>
+<script>
+	document.onclick=function(e){
+		var ev=e||event;
+		var iTarget=ev.target||ev.srcElement;
+		eventAgency(iTarget,"b",function(s){	
+			s.style.backgroundColor="red";
+		})
+	}
+</script>
+</body>
+</html>
